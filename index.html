@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <style>
+    .local {
+      display: none;
+    }
+
+    .local-video {
+      width: 320px;
+      height: 240px;
+    }
+
+    .local-wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    .local-audio-container,
+    .local-video-container {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+
+<body style="background: white;">
+  <form action="none">
+    <div>
+      <span>appId:</span>
+      <input id="appId" type="text">
+    </div>
+    <div>
+      <span>channel:</span>
+      <input id="channel" type="text">
+    </div>
+    <div>
+      <span>token(optional):</span>
+      <input id="token" type="text">
+    </div>
+  </form>
+  <div>
+    <button class="join">join channel</button>
+  </div>
+  <div class="local">
+    <h2>local</h2>
+    <div class="local-wrapper">
+      <div class="local-video-container">
+        <h3>local video</h3>
+        <div class="local-video"></div>
+      </div>
+      <div class="local-audio-container">
+        <h3>local audio</h3>
+        <label for="speakers">Choose local audio playback device: </label>
+        <select name="speakers" id="local-speakers">
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="remote"></div>
+  </div>
+  <div class="btn-group"></div>
+  <script src="./AgoraRTC_N.js"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>
